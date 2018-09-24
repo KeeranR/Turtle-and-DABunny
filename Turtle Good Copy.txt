@@ -1,0 +1,182 @@
+//Image of turtle
+PImage turtle;
+
+//Image of bunny
+PImage bunny;
+
+//Float....for some reason
+float x=0;
+
+//Int for stage
+int stage;
+
+//Int for turtleX' location and to make it move
+int turtleX = 10;
+
+//Int for dabunnyX' location and to make it move
+int dabunnyX = 10;
+
+//Int X loaction for the text onend screen
+int centerWidth=130;
+
+//Int Y location for the text on end screen
+int centerHeight=400;
+
+//Int X location for the text on end screen
+int centerrWidth=130;
+
+//Int Y location for the text on end screen
+int centerrHeight=500;
+
+void setup()
+{
+  //Size of screen
+  size(800,800); 
+  
+  //To load the image of the turtle
+ turtle=loadImage("turtle.png");
+ 
+ //To load the image of the dabunny
+ bunny=loadImage("DABunny.jpg");
+}
+void draw()
+{
+  //Background colour
+ background(0);
+ 
+ //Turtle image and x-y location
+ image(turtle,turtleX,200);
+ 
+ //dabunny image and x-y location
+ image(bunny,dabunnyX,500);
+ 
+ //here comes the long part
+ //Middle line to separate the turtle and the bunny
+ rect(600,0,25,50000);
+ 
+ //Finish line
+ rect(0,350,600,25);
+ 
+ //Checkered flag 1
+ rect(640,0,55,65);
+ 
+ //Checkered flag 2
+ rect(734,0,55,65);
+ 
+ //Checkered flag 3
+ rect(690,67,55,65);
+ 
+ //Checkered flag 4
+ rect(640,134,55,65);
+ 
+ //Checkered flag 5
+ rect(734,134,55,65);
+ 
+ //Checkered flag 6
+ rect(686,204,55,65);
+ 
+ //Checkered flag 7
+ rect(640,271,55,65);
+
+  //Checkered flag 8
+ rect(734,271,55,65);
+ 
+ //Checkered flag 9
+ rect(690,338,55,65);
+ 
+ //Checkered flag 10
+ rect(640,404,55,65);
+ 
+ //Checkered flag 11
+ rect(734,404,55,65);
+ 
+ //Checkered flag 12
+ rect(690,471,55,65);
+ 
+ //Checkered flag 13
+ rect(640,538,55,65);
+ 
+ //Checkered flag 14
+ rect(734,538,55,65);
+ 
+ //Checkered flag 15
+ rect(690,603,55,65);
+ 
+ //Checkered flag 16
+ rect(640,670,55,65);
+ 
+ //Checkered flag 17
+ rect(690,735,55,65);
+ 
+ //Checkered flag 18
+ rect(734,670,55,65);
+ 
+ //Fill colour for the 57 rectangles
+ fill(255);
+ 
+ //If the turtle touches the finish line 
+ if (turtleX >= 500)
+ {
+    //Then the screen goes onto stage 3
+    stage = 3;
+ }
+ //If dabunny touches the finish line
+ if (dabunnyX>=500)
+ {
+    //Then the screen goes onto stage 4
+    stage=4;
+ }
+//When the system goes to stage 3
+if(stage==3)
+ {
+    //The background is black/(0)
+    background(0);
+      
+    //Text appears on the screen to inform that the game ended
+    text("Game Over!",centerWidth,centerHeight);
+      
+    //Text to inform who won
+    text("Turtle Wins",centerrWidth,centerrHeight);
+      
+    //Text size for the end screen
+    textSize(90);
+      
+    //Text mode's location on the end screen
+    textMode(CORNER);
+ }
+//If the system goes to stage 4
+if (stage==4)
+ {
+    //The background turns black/(0)
+    background(0);
+  
+    //Text appears on the screen to inform that the game ended
+    text("Game Over!",centerWidth,centerHeight);
+  
+    //Text to inform who won
+    text("DABunny Wins",centerrWidth,centerrHeight);
+  
+    //Text size for the end screen
+    textSize(90);
+  
+    //Text mode's location for the end screen
+    textMode(CORNER);
+  }
+}
+
+void keyPressed()
+{
+  //If you press the W key
+  if (key=='w'||key=='W')
+  {
+    //The turtle moves to the right by 3 X coordinates
+    turtleX=turtleX+3;
+  }
+  //If you press the O key
+  if(key=='o'||key=='O')
+  {
+    //Dabunny moves to the right by 3 X coordinates
+    dabunnyX=dabunnyX+3;
+   
+  }
+}
